@@ -7,6 +7,14 @@ function VideoFooter({ channel, description, song }) {
   return (
     <div className="videoFooter">
       <div className="videoFooter__text">
+        <div className="tags">
+          &nbsp;
+          <h5 className="trending">#trending</h5>
+          <span> </span>
+          <h5>#pro</h5> 
+          &nbsp;
+        </div>        
+
         <h3>@{channel}</h3>
         <p>{description}</p>
         <div className="videoFooter__ticker">

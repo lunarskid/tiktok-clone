@@ -6,7 +6,7 @@
   margin: 0;
   padding: 0;
   list-style-type: none;
-  transition-duration: 1s;
+  transition-duration: 1.5s;
 }
 
 html {
@@ -74,7 +74,7 @@ html {
   float: left;
   margin-left: 5%;
   line-height: 50px;
-  font-size: 2em;
+  font-size: 1.7em;
 }
 
 nav {
@@ -113,7 +113,7 @@ li:not(:first-child) {
 
 li:hover a {
   position: relative;
-  color: rgba(255, 255, 255, 0.9);
+  /*color: rgba(255, 255, 255, 0.9);*/
 }
 
 .text {
@@ -128,11 +128,16 @@ a {
   color: white;
 }
 
+a:hover {
+  background-color: #0ABFBC !important;
+  text-decoration: none;
+}
+
 li:not(:first-child) a:hover {
-  border: 2px solid #0ABFBC;
+  border-radius: 1.75px;
+  border-color: #0ABFBC;
   background: rgba(162, 157, 121, 0.4);
   box-shadow: 0 0 5px 1px #0ABFBC;
-  transition-duration: .1s;
-  border-bottom: 10px solid #0ABFBC;
+  transition-duration: .7s;
   color: black;
 }

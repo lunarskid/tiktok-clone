@@ -1,7 +1,7 @@
 .videoFooter {
   position: relative;
   color: white;
-  bottom: 175px;
+  bottom: 200px;
   margin-left: 40px;
   display: flex;
 }
@@ -11,7 +11,32 @@
 }
 
 .videoFooter__text > p {
-  padding-bottom: 20px;
+  padding-bottom: 13px;
+}
+
+
+.tags {
+  display: flex;
+  white-space: pre-wrap;
+  width: -webkit-fit-content;
+  height: -webkit-fit-content;
+  width: -moz-fit-content;
+  height: -moz-fit-content;
+
+  background-color: black;
+  border-right-color: black;
+  border-right-width: 10px;
+  /* border: 1.2px black solid; */
+  border-radius: 3px;
+}
+
+.trending {
+  background: #fc00ff;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #00dbde, #fc00ff);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #00dbde, #fc00ff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */  
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .videoFooter__record {

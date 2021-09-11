@@ -18,6 +18,7 @@ function App() {
       <div className="header" key={0}>
       <nav>
         <ul>
+          <li></li>
           <li className="logo"><a href="#">Bloxified <span className="mini" /></a></li>
           <li className="text"><a href="#">About</a></li>
           <li className="text"><a href="#">Skills</a></li>
