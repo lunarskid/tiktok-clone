@@ -15,6 +15,12 @@ html {
   overflow-x: hidden;
 }
 
+body {
+  background: black; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #feac5e, #c779d0, #4bc0c8); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #feac5e, #c779d0, #4bc0c8); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
 ::-webkit-scrollbar {
     width: 0;  /* Remove scrollbar space */
     background: transparent;  /* Optional: just make scrollbar invisible */
@@ -29,10 +35,6 @@ html {
   /* background-color: black; */
 
   margin-top: 0px;
-
-  background: black; /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #feac5e, #c779d0, #4bc0c8); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #feac5e, #c779d0, #4bc0c8); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
   display: grid;
   place-items: center;
@@ -49,6 +51,11 @@ html {
   filter: drop-shadow(0.35rem 0.35rem 0.4rem rgba(0, 0, 0, 0.5));
   box-shadow: 0 0 1px 0px black inset, 0 0 1px 0px black;
   place-items: center;
+}
+
+.alignRight {
+  float: right;
+  padding-top: 18px;
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
@@ -69,12 +76,17 @@ html {
   z-index: 1030;
 }
 
+.MuiIcon-root {
+  padding-top: 1px;
+}
+
 .logo {
   font-family: 'Fira Code', monospace;
   float: left;
   margin-left: 5%;
   line-height: 50px;
   font-size: 1.7em;
+  padding-top: 5px;
 }
 
 nav {
@@ -85,7 +97,7 @@ nav {
 }
 
 nav:hover li a {
-  color: #0ABFBC;
+  /*color: #0ABFBC;*/
   text-shadow: 0 0 10px linear-gradient(
     to right,
     #fd004c,
@@ -99,7 +111,7 @@ nav:hover li a {
 
 ul {
   text-align: center;
-  height: 50px;
+  height: 58px;
   background: #181818;
 }
 
@@ -108,7 +120,7 @@ li {
 }
 
 li:not(:first-child) {
-  padding: 0 2%;
+  padding-right: 2.7%;
 }
 
 li:hover a {
@@ -126,18 +138,15 @@ a {
   text-transform: uppercase;
   padding: 5px 15px;
   color: white;
+  height:58px
 }
 
 a:hover {
-  background-color: #0ABFBC !important;
+  background-color: #181818 !important;
+  color: #0ABFBC !important;
   text-decoration: none;
 }
 
 li:not(:first-child) a:hover {
-  border-radius: 1.75px;
-  border-color: #0ABFBC;
-  background: rgba(162, 157, 121, 0.4);
-  box-shadow: 0 0 5px 1px #0ABFBC;
   transition-duration: .7s;
-  color: black;
 }
