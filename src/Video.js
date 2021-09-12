@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect } from "react";
 import VideoFooter from "./VideoFooter";
-import VideoSidebar from "./VideoSidebar";
+import VideoSidebar from "./VideoSidebar"; 
 import VisibilitySensor from 'react-visibility-sensor';
 import axios from 'axios';
 import "./Video.css";
@@ -8,6 +8,7 @@ import "./Video.css";
 function Video({ url, channel, description, song, likes, messages, shares, id }) {
   const [playing, setPlaying] = useState(false);
   const [channelName, setChannelName] = useState('');
+  let [opacity, setOpacity] = React.useState(1)
 
   useEffect(() => {
     // You need to restrict it at some point
@@ -19,6 +20,12 @@ function Video({ url, channel, description, song, likes, messages, shares, id })
   const videoRef = useRef(null);
 
   const onVideoPress = () => {
+    if (opacity <= 0.5) {
+      setOpacity(1)
+    } else if (opacity >= 1) {
+      setOpacity(0.45)
+    }
+
     if (playing) {
       videoRef.current.pause();
       setPlaying(false);
@@ -29,6 +36,8 @@ function Video({ url, channel, description, song, likes, messages, shares, id })
       view(id)
     }
   };
+
+  let btn_class = playing ? "transparent" : "full";
 
   console.log(id)
 
@@ -58,6 +67,8 @@ function Video({ url, channel, description, song, likes, messages, shares, id })
 
   console.log(channelName)
 
+  const style = { button: { opacity:'35%' } }
+
   return (
       <div className="video">
         <video
@@ -67,8 +78,8 @@ function Video({ url, channel, description, song, likes, messages, shares, id })
           ref={videoRef}
           src={url}
         ></video>
-        <VideoFooter channel={channelName} description={description} song={song} />
-        <VideoSidebar likes={likes} messages={messages} shares={shares} />
+        <VideoFooter channel={channelName} description={description} song={song} style={{opacity: opacity}}/>
+        <VideoSidebar likes={likes} messages={messages} shares={shares} style={{opacity: opacity}}/>
       </div>
   );
 }

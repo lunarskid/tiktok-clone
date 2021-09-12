@@ -9,3 +9,16 @@
   padding: 20px;
   text-align: center;
 }
+
+.roundedSB {
+    padding: 4px 4px 4px 4px;
+
+    width: -webkit-fit-content;
+    height: -webkit-fit-content;
+    width: -moz-fit-content;
+    height: -moz-fit-content;
+  
+    background-color: black;
+    /* border: 1.2px black solid; */
+    border-radius: 5px
+  }

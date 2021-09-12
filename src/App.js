@@ -4,6 +4,11 @@ import { useDropzone } from "react-dropzone";
 import Video from "./Video";
 import db from "./firebase";
 import "./App.css";
+
+import SignInSide from "./SignInSide";
+import SignUp from "./SignUp";
+import Thoughts from "./ThoughtsDemo";
+
 import { Grid, Typography } from "@material-ui/core";
 import Explore from "@material-ui/icons/Explore";
 import Publish from "@material-ui/icons/Publish";
@@ -13,6 +18,21 @@ import Chat from '@material-ui/icons/Chat';
 import Developer from "@material-ui/icons/Code";
 import Store from '@material-ui/icons/Store';
 import Settings from '@material-ui/icons/Settings';
+
+import { createMuiTheme } from '@material-ui/core/styles';
+import { ThemeProvider } from '@material-ui/styles';
+
+const theme = createMuiTheme({
+  typography: {
+    fontFamily: [
+      'Fira Code',
+      'Roboto',
+      '"Helvetica Neue"',
+      'Arial',
+      'sans-serif'
+    ].join(','),
+  }
+});
 
 function App() {
   return (
@@ -61,7 +81,6 @@ function App() {
           </nav>
         </div>
         <div className="app" key={1}>
-          <div style={{ height: 75 + "px" }}></div>
           <Switch>
             <Route path="/about">
               <About />
@@ -71,6 +90,19 @@ function App() {
             </Route>
             <Route path="/users">
               <Users />
+            </Route>
+            <Route path="/test">
+              <Thoughts />
+            </Route>
+            <Route path="/signin">
+              <ThemeProvider theme={theme}>
+                <SignInSide />
+              </ ThemeProvider> 
+            </Route>
+            <Route path="/signup">
+              <ThemeProvider theme={theme}>
+                <SignUp />
+              </ ThemeProvider>
             </Route>
             <Route exact path="/">
               <Home />
@@ -114,6 +146,7 @@ function Home() {
 
   return (
     <React.Fragment>
+    <div style={{ height: 75 + "px" }}></div>
       {videos.map(
         ({ url, channel, description, song, likes, messages, shares, id }) => (
           <React.Fragment>
@@ -138,23 +171,39 @@ function Home() {
 }
 
 function About() {
-  return <h1>About</h1>;
+  return (
+    <React.Fragment>
+    <div style={{ height: 75 + "px" }}></div>
+    <h1>About</h1>
+    </React.Fragment>
+  );
 }
 
 function Users() {
-  return <h1>Users</h1>;
+  return (
+    <React.Fragment>
+    <div style={{ height: 75 + "px" }}></div>
+    <h1>Users</h1>
+    </React.Fragment>
+  );
 }
 
 function Upload() {
   return (
     <React.Fragment>
-      <h1>Upload</h1>
+    <div style={{ height: 75 + "px" }}></div>
+    <h1>Upload</h1>
     </React.Fragment>
   );
 }
 
 function NotFound() {
-  return <h1>404</h1>;
+  return (
+    <React.Fragment>
+    <div style={{ height: 75 + "px" }}></div>
+    <h1>404</h1>
+    </React.Fragment>
+  );
 }
 
 export default App;

@@ -1,11 +1,12 @@
 import React from "react";
 import "./VideoFooter.css";
 import MusicNoteIcon from "@material-ui/icons/MusicNote";
+import { Grid, Typography } from "@material-ui/core";
 import Ticker from "react-ticker";
 
-function VideoFooter({ channel, description, song }) {
+function VideoFooter({ channel, description, song, style }) {
   return (
-    <div className="videoFooter">
+    <div className="videoFooter" style={style}>
       <div className="videoFooter__text">
         <div className="tags">
           &nbsp;
@@ -15,11 +16,12 @@ function VideoFooter({ channel, description, song }) {
           &nbsp;
         </div>        
 
-        <h3>@{channel}</h3>
-        <p>{description}</p>
-        <div className="videoFooter__ticker">
-          <MusicNoteIcon className="videoFooter__icon" />
-          <strong style={{paddingLeft: 27 + 'px'}}>{song}</strong>
+        <h3 className="roundedT">@{channel}</h3>
+        <p className="roundedTRBR">{description}</p>
+        <div className="videoFooter__ticker rounded">
+          <Grid container direction="row" alignItems="center">
+          <MusicNoteIcon className="videoFooter__icon" /> <strong style={{paddingLeft: 27 + 'px'}}>{song}</strong>
+          </Grid>
         </div>
       </div>
       <img
